@@ -1,0 +1,19 @@
+{
+  "extends": "../tsconfig.json",    
+  "compilerOptions": {
+    "outDir": "../dist/",          
+    "module": "es2015",            
+    "sourceMap": true,             
+    "importHelpers": true,         
+    "downlevelIteration": true,    
+    "strict": true,                
+    "noUnusedLocals": true,        
+    "noUnusedParameters": true,    
+    "noImplicitReturns": true,   
+    "allowSyntheticDefaultImports": true  
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

@@ -1,9 +1,9 @@
 const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+import * as webpack from 'webpack';
+import * as HtmlWebpackPlugin from 'html-webpack-plugin';
+import * as CleanWebpackPlugin from 'clean-webpack-plugin';
 
-module.exports = {
+const config: webpack.Configuration = {
   entry : {
     app: './src/main.ts',
     vendor: './src/vendor.ts',
@@ -20,19 +20,21 @@ module.exports = {
     rules: [
       {
         test: /\.ts$/, 
-        use: [
-          'ts-loader'
-        ]
+        loader: 'ts-loader',
+        options: {
+          configFile: 'tsconfig.json'
+        }
       }
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin([
+    new webpack.optimize.CommonsChunkPlugin({
+      names: [
       'app', 
       'vendor', 
       'polyfill', 
       'manifest'
-    ]),    
+    ]}),    
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../')
     }),
@@ -42,3 +44,5 @@ module.exports = {
     }),
   ],
 }
+
+export default config;
