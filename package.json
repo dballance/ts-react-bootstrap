@@ -8,13 +8,15 @@
   "private": true,
   "scripts": {
     "build": "webpack --config ./config/webpack.common.ts",
-    "build:dev": "webpack --config ./config/webpack.dev.ts", 
-    "start": "webpack-dev-server --config ./config/webpack.dev.ts --open --color"
+    "build:dev": "webpack --config ./config/webpack.dev.ts",
+    "build:prod": "webpack --config ./config/webpack.prod.ts",
+    "start": "webpack-dev-server --config ./config/webpack.dev.ts --open --color --hot"
   },
   "dependencies": {
     "core-js": "^2.5.1",
     "react": "^16.0.0-rc.3",
     "react-dom": "^16.0.0-rc.3",
+    "react-hot-loader": "^3.0.0-beta.7",
     "typescript": "^2.5.2"
   },
   "devDependencies": {
