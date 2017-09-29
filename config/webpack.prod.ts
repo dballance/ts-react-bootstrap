@@ -5,7 +5,7 @@ import commonConfig from './webpack.common';
 import { getWebpackStatsConfig } from './utils';
 
 
-const config = webpackMerge(
+const config = webpackMerge.smart(
   commonConfig, 
   {
     plugins: [

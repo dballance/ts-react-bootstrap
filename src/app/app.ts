@@ -8,6 +8,6 @@ interface State {}
 
 export default class App extends Component<Props, State> {
   render(){
-    return React.createElement('div', {}, `Hello ${this.props.toWhat}`);
+    return React.createElement('div', {}, `Hello ! ${this.props.toWhat}`);
   }
 }

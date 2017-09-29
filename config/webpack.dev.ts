@@ -5,7 +5,7 @@ import commonConfig from './webpack.common';
 import { getWebpackStatsConfig } from './utils';
 
 
-const config = webpackMerge(
+const config = webpackMerge.smart(
   commonConfig, 
   
   {
@@ -13,13 +13,7 @@ const config = webpackMerge(
       app: [
         "react-hot-loader/patch",
         './src/main.ts'
-      ],
-      vendor:  [
-        "react-hot-loader/patch",'./src/vendor.ts',
-      ],
-      polyfill:  [
-        "react-hot-loader/patch",'./src/polyfills.ts'
-      ],
+      ]
     }, 
     devtool: 'eval', 
     devServer: {
@@ -28,6 +22,7 @@ const config = webpackMerge(
       port: 3000,
       overlay: true, 
       hot: true,
+      inline: true,
       stats: getWebpackStatsConfig(false)
     }, 
     module: {
@@ -47,7 +42,9 @@ const config = webpackMerge(
       ]
     },
     plugins: [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.NamedModulesPlugin(),      
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoEmitOnErrorsPlugin()
     ]
   }
 )
