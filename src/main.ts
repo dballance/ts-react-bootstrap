@@ -6,20 +6,20 @@ import App from './app/app'
 
 const root = document.getElementById('root')
 
-const renderApp = (Component: React.ComponentClass<{toWhat: string}>) => {
+const renderApp = (Component: React.ComponentClass<{ toWhat: string }>) => {
   render(
     React.createElement(
       AppContainer,
       undefined,
-      React.createElement(Component, {toWhat: 'World!'}, null),
+      React.createElement(Component, { toWhat: 'World!' }, null)
     ),
-    root,
+    root
   )
 }
-renderApp(App);
+renderApp(App)
 
 if (module.hot) {
   module.hot.accept('./app/app', () => {
     renderApp(App)
-  });
+  })
 }

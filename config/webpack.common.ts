@@ -1,48 +1,54 @@
-const path = require('path');
-import * as webpack from 'webpack';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import * as CleanWebpackPlugin from 'clean-webpack-plugin';
+import * as CleanWebpackPlugin from 'clean-webpack-plugin'
+import * as HtmlWebpackPlugin from 'html-webpack-plugin'
+import * as path from 'path'
+import * as webpack from 'webpack'
 
 const config: webpack.Configuration = {
-  entry : {
+  entry: {
     app: './src/main.ts',
-    vendor: './src/vendor.ts',
-    polyfill: './src/polyfills.ts'
-  }, 
-  output: {
-    filename: '[name].[hash].js', 
-    path: path.resolve(__dirname, '../dist')
-  },
-  resolve: {
-    extensions: ['.ts', '.js']
+    polyfill: './src/polyfills.ts',
+    vendor: './src/vendor.ts'
   },
   module: {
     rules: [
       {
-        test: /\.ts$/, 
-        loader: 'ts-loader',
-        options: {
-          configFile: 'tsconfig.json'
-        }
+        test: /\.ts$/,
+        use: [
+          {
+            loader: 'tslint-loader',
+            options: {
+              configFile: './tslint.json'
+            }
+          },
+          {
+            loader: 'ts-loader',
+            options: {
+              configFile: 'tsconfig.json'
+            }
+          }
+        ]
       }
     ]
   },
+  output: {
+    filename: '[name].[hash].js',
+    path: path.resolve(__dirname, '../dist')
+  },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      names: [
-      'app', 
-      'vendor', 
-      'polyfill', 
-      'manifest'
-    ]}),    
+      names: ['app', 'vendor', 'polyfill', 'manifest']
+    }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../')
     }),
     new HtmlWebpackPlugin({
-      title: 'Dev', 
+      title: 'Dev',
       template: './src/index.html'
-    }),
+    })
   ],
+  resolve: {
+    extensions: ['.ts', '.js']
+  }
 }
 
-export default config;
+export default config
