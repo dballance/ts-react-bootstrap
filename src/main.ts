@@ -11,7 +11,7 @@ const renderApp = (Component: React.ComponentClass<{ toWhat: string }>) => {
     React.createElement(
       AppContainer,
       undefined,
-      React.createElement(Component, { toWhat: 'World!' }, null)
+      React.createElement(Component, { toWhat: 'World' }, null)
     ),
     root
   )

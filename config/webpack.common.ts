@@ -12,6 +12,7 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
+        enforce: 'pre',
         test: /\.ts$/,
         use: [
           {
@@ -19,7 +20,12 @@ const config: webpack.Configuration = {
             options: {
               configFile: './tslint.json'
             }
-          },
+          }
+        ]
+      },
+      {
+        test: /\.ts$/,
+        use: [
           {
             loader: 'ts-loader',
             options: {
@@ -42,8 +48,8 @@ const config: webpack.Configuration = {
       root: path.resolve(__dirname, '../')
     }),
     new HtmlWebpackPlugin({
-      title: 'Dev',
-      template: './src/index.html'
+      template: './src/index.html',
+      title: 'Dev'
     })
   ],
   resolve: {

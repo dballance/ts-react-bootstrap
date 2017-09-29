@@ -4,9 +4,7 @@ interface Props {
   toWhat: string
 }
 
-interface State {}
-
-export default class App extends Component<Props, State> {
+export default class App extends Component<Props, {}> {
   render() {
     return React.createElement('div', {}, `Hello ! ${this.props.toWhat}`)
   }
