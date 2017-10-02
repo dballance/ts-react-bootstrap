@@ -15,7 +15,7 @@ const config = webpackMerge.smart(commonConfig, {
     port: 3000,
     stats: getWebpackStatsConfig(false)
   },
-  devtool: 'eval',
+  devtool: 'cheap-module-eval-source-map',
   entry: {
     app: ['react-hot-loader/patch', './src/main.ts']
   },
