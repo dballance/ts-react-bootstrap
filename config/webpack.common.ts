@@ -18,7 +18,8 @@ const config: webpack.Configuration = {
           {
             loader: 'tslint-loader',
             options: {
-              configFile: './tslint.json'
+              configFile: './tslint.json',
+              typeCheck: true
             }
           }
         ]
