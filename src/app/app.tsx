@@ -6,6 +6,6 @@ interface Props {
 
 export default class App extends Component<Props, {}> {
   render() {
-    return React.createElement('div', {}, `Hello ! ${this.props.toWhat}`)
+    return <div className="title">Hello ! {this.props.toWhat}</div>
   }
 }

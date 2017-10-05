@@ -22,7 +22,7 @@ const config = webpackMerge.smart(commonConfig, {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: [
           'react-hot-loader/webpack',
           {

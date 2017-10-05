@@ -13,7 +13,7 @@ const config: webpack.Configuration = {
     rules: [
       {
         enforce: 'pre',
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: 'tslint-loader',
@@ -25,7 +25,7 @@ const config: webpack.Configuration = {
         ]
       },
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: 'ts-loader',
@@ -54,7 +54,7 @@ const config: webpack.Configuration = {
     })
   ],
   resolve: {
-    extensions: ['.ts', '.js']
+    extensions: ['.ts', '.tsx', '.js']
   }
 }
 
