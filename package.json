@@ -62,10 +62,22 @@
       "^.+\\.(tsx?)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(src/app).*\\.(test|spec)\\.(tsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "setupTestFrameworkScriptFile": "./spec/test.ts",
-    "setupFiles": ["./spec/polyfills/requestAnimationFrame.ts"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "setupFiles": [
+      "./spec/polyfills/requestAnimationFrame.ts"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
