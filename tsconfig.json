@@ -7,6 +7,8 @@
     "moduleResolution": "node",
     "target": "es5",
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"]
+    "lib": ["es2017", "dom"],
+    "jsx": "react",
+    "allowSyntheticDefaultImports": true
   }
 }

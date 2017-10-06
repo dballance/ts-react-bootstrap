@@ -13,5 +13,5 @@
     "allowSyntheticDefaultImports": true,
     "jsx": "react"
   },
-  "exclude": ["test.ts", "**/*.spec.ts"]
+  "exclude": ["**/*.spec.ts", "**/*.spec.tsx"]
 }
