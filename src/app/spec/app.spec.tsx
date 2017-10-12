@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import App from './app'
+import App from '../app'
 
 describe('App ', () => {
   it('should render without throwing', () => {
@@ -15,5 +15,11 @@ describe('App ', () => {
     const wrapper = shallow(<App toWhat="Foo" />)
 
     expect(wrapper.find('div').text()).toBe('Hello ! Foo')
+  })
+
+  it('should match the snapshot', () => {
+    const wrapper = shallow(<App toWhat="Foo" />)
+
+    expect(wrapper).toMatchSnapshot()
   })
 })
