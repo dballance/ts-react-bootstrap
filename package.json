@@ -35,14 +35,22 @@
     "@types/webpack-env": "^1.13.1",
     "@types/webpack-merge": "^4.1.0",
     "clean-webpack-plugin": "^0.1.16",
+    "css-loader": "^0.28.7",
+    "cssnano": "^3.10.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.1",
     "enzyme-to-json": "^3.1.1",
+    "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^21.2.1",
+    "postcss": "^6.0.13",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^11.0.0",
+    "postcss-loader": "^2.0.7",
     "prettier": "1.7.4",
     "react-hot-loader": "3.0.0",
     "react-test-renderer": "^16.0.0",
+    "style-loader": "^0.19.0",
     "ts-jest": "^21.0.1",
     "ts-loader": "^2.3.7",
     "ts-node": "^3.3.0",
@@ -62,10 +70,22 @@
       "^.+\\.(tsx?)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(src/app).*\\.(test|spec)\\.(tsx?)$",
-    "moduleFileExtensions": ["ts", "tsx", "js", "json"],
-    "moduleDirectories": ["node_modules", "src"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
     "setupTestFrameworkScriptFile": "./spec/test.ts",
-    "setupFiles": ["./spec/polyfills/requestAnimationFrame.ts"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "setupFiles": [
+      "./spec/polyfills/requestAnimationFrame.ts"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

@@ -12,6 +12,17 @@ const config: webpack.Configuration = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          { loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'postcss-loader',
+            options: { config: { path: 'config/postcss.config.js' } }
+          }
+        ]
+      },
+      {
         enforce: 'pre',
         test: /\.tsx?$/,
         use: [

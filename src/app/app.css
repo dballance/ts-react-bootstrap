@@ -1,0 +1,6 @@
+@import '../theme.css';
+
+.title {
+  background-color: var(--title-color);
+  display: flex;
+}
