@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import './main.scss'
 
 import App from './app/app'
 
