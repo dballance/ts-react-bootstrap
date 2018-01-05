@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import './app.css'
+import './app.scss'
 
 interface Props {
   toWhat: string
 }
 
 export default class App extends Component<Props, {}> {
-  render() {
+  public render() {
     return <div className="title">Hello ! {this.props.toWhat}</div>
   }
 }

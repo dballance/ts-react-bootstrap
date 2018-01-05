@@ -1,25 +1,8 @@
 {
-    "defaultSeverity": "error",
-    "extends": [
-        "tslint:latest",
-        "tslint-config-standard",
-        "tslint-config-prettier"
-    ], 
-    "rulesDirectory": [
-        "tslint-plugin-prettier"
-    ], 
-    "rules": {
-        "prettier": [
-            true,
-            {
-                "singleQuote": true,
-                "trailingComma": "none",
-                "semi": false
-            }
-        ],
-        "interface-name": [
-            true,
-            "never-prefix"
-        ]
-    }
+  "defaultSeverity": "error",
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "interface-name": [true, "never-prefix"]
+  }
 }
