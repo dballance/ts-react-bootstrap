@@ -1,10 +1,10 @@
-process.env.NODE_ENV = 'development'
-import * as path from 'path'
-import * as webpack from 'webpack'
-import * as webpackMerge from 'webpack-merge'
-import commonConfig from './webpack.common'
+process.env.NODE_ENV = 'development';
+import * as path from 'path';
+import * as webpack from 'webpack';
+import * as webpackMerge from 'webpack-merge';
+import commonConfig from './webpack.common';
 
-import { getWebpackStatsConfig } from './utils'
+import { getWebpackStatsConfig } from './utils';
 
 const config = webpackMerge.smart(commonConfig, {
   devServer: {
@@ -14,11 +14,11 @@ const config = webpackMerge.smart(commonConfig, {
     inline: true,
     overlay: true,
     port: 3000,
-    stats: getWebpackStatsConfig(false)
+    stats: getWebpackStatsConfig(false),
   },
   devtool: 'cheap-module-eval-source-map',
   entry: {
-    app: ['react-hot-loader/patch', './src/main.ts']
+    app: ['react-hot-loader/patch', './src/main.ts'],
   },
   module: {
     rules: [
@@ -29,18 +29,18 @@ const config = webpackMerge.smart(commonConfig, {
           {
             loader: 'ts-loader',
             options: {
-              configFile: 'tsconfig.json'
-            }
-          }
-        ]
-      }
-    ]
+              configFile: 'tsconfig.json',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  ]
-})
+    new webpack.NoEmitOnErrorsPlugin(),
+  ],
+});
 
-export default config
+export default config;

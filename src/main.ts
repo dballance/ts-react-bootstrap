@@ -1,11 +1,11 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
-import './main.scss'
+import React from 'react';
+import { render } from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
+import './main.scss';
 
-import App from './app/app'
+import App from './app/app';
 
-const root = document.getElementById('root')
+const root = document.getElementById('root');
 
 const renderApp = (Component: React.ComponentClass<{ toWhat: string }>) => {
   render(
@@ -15,12 +15,12 @@ const renderApp = (Component: React.ComponentClass<{ toWhat: string }>) => {
       React.createElement(Component, { toWhat: 'World' }, null)
     ),
     root
-  )
-}
-renderApp(App)
+  );
+};
+renderApp(App);
 
 if (module.hot) {
   module.hot.accept('./app/app', () => {
-    renderApp(App)
-  })
+    renderApp(App);
+  });
 }

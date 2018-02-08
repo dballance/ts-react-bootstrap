@@ -9,19 +9,19 @@ const webpackOutputOptions = {
   reasons: false,
   timings: true,
   version: false,
-  warnings: true
-}
+  warnings: true,
+};
 
 const verboseWebpackOutputOptions = {
   assets: true,
   children: true,
   chunkModules: false,
   reasons: true,
-  version: true
-}
+  version: true,
+};
 
 export function getWebpackStatsConfig(verbose = false) {
   return verbose
     ? { ...webpackOutputOptions, ...verboseWebpackOutputOptions }
-    : webpackOutputOptions
+    : webpackOutputOptions;
 }

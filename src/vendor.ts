@@ -1,2 +1,2 @@
-import 'react'
-import 'react-dom'
+import 'react';
+import 'react-dom';
