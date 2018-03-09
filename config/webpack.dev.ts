@@ -7,6 +7,7 @@ import commonConfig from './webpack.common';
 import { getWebpackStatsConfig } from './utils';
 
 const config = webpackMerge.smart(commonConfig, {
+  mode: 'development',
   devServer: {
     compress: true,
     contentBase: path.resolve(__dirname, '../dist'),
@@ -25,7 +26,13 @@ const config = webpackMerge.smart(commonConfig, {
       {
         test: /\.tsx?$/,
         use: [
-          'react-hot-loader/webpack',
+          {
+            loader: 'babel-loader', 
+            options: {
+              babelrc: false,
+              plugins:['react-hot-loader/babel']
+            }
+          },
           {
             loader: 'ts-loader',
             options: {

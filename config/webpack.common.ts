@@ -61,14 +61,16 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  optimization: {
+      runtimeChunk: {
+          name: "js/manifest"
+      },
+  },
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, '../dist'),
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin({
-      names: ['app', 'vendor', 'polyfill', 'manifest'],
-    }),
     new CleanWebpackPlugin(['dist'], {
       root: path.resolve(__dirname, '../'),
     }),
