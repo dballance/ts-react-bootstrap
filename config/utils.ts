@@ -1,3 +1,5 @@
+import * as webpack from 'webpack';
+
 const webpackOutputOptions = {
   assets: false, // listing all assets is very noisy when using assets directories
   children: false, // listing all children is very noisy in AOT and hides warnings/errors
@@ -20,7 +22,7 @@ const verboseWebpackOutputOptions = {
   version: true,
 };
 
-export function getWebpackStatsConfig(verbose = false) {
+export function getWebpackStatsConfig(verbose = false): webpack.Stats.ToJsonOptionsObject {
   return verbose
     ? { ...webpackOutputOptions, ...verboseWebpackOutputOptions }
     : webpackOutputOptions;

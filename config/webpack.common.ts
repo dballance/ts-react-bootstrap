@@ -62,9 +62,9 @@ const config: webpack.Configuration = {
     ],
   },
   optimization: {
-      runtimeChunk: {
-          name: "js/manifest"
-      },
+    runtimeChunk: {
+      name: 'js/manifest',
+    },
   },
   output: {
     filename: '[name].[hash].js',

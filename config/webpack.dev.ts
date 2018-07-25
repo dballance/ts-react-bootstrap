@@ -15,7 +15,7 @@ const config = webpackMerge.smart(commonConfig, {
     inline: true,
     overlay: true,
     port: 3000,
-    stats: getWebpackStatsConfig(false),
+    stats: getWebpackStatsConfig(false) as any,
   },
   devtool: 'cheap-module-eval-source-map',
   entry: {
@@ -27,11 +27,11 @@ const config = webpackMerge.smart(commonConfig, {
         test: /\.tsx?$/,
         use: [
           {
-            loader: 'babel-loader', 
+            loader: 'babel-loader',
             options: {
               babelrc: false,
-              plugins:['react-hot-loader/babel']
-            }
+              plugins: ['react-hot-loader/babel'],
+            },
           },
           {
             loader: 'ts-loader',
