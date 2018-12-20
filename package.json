@@ -19,8 +19,8 @@
   "dependencies": {
     "core-js": "^2.6.1",
     "normalize.css": "^8.0.1",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
