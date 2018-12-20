@@ -22,7 +22,9 @@ const verboseWebpackOutputOptions = {
   version: true,
 };
 
-export function getWebpackStatsConfig(verbose = false): webpack.Stats.ToJsonOptionsObject {
+export function getWebpackStatsConfig(
+  verbose = false
+): webpack.Stats.ToJsonOptionsObject {
   return verbose
     ? { ...webpackOutputOptions, ...verboseWebpackOutputOptions }
     : webpackOutputOptions;

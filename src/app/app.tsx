@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { hot } from 'react-hot-loader';
+
 import './app.scss';
 
-interface Props {
-  toWhat: string;
+const App = () => {
+  return <div className="title">Hello World!</div>;
 }
 
-export default class App extends Component<Props, {}> {
-  public render() {
-    return <div className="title">Hello ! {this.props.toWhat}</div>;
-  }
-}
+export default hot(module)(App);
