@@ -4,14 +4,12 @@ import React from 'react';
 import { hot } from 'react-hot-loader/root';
 
 const styles = css`
-    color: white;
-    background-color: blue;
+  color: white;
+  background-color: blue;
 `;
 
 const App = () => {
-  return (
-    <div css={styles}>Hello World!</div>
-  );
-}
+  return <div css={styles}>Hello World!</div>;
+};
 
 export default hot(App);

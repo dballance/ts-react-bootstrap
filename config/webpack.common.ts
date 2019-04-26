@@ -11,12 +11,9 @@ const config: Configuration = {
   },
   module: {
     rules: [
-      {        
+      {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
+        use: ['style-loader', 'css-loader'],
       },
       {
         enforce: 'pre',
@@ -55,7 +52,7 @@ const config: Configuration = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       title: 'Dev',
-    }), 
+    }),
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],

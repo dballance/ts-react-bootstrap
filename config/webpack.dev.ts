@@ -1,6 +1,10 @@
 process.env.NODE_ENV = 'development';
 import path from 'path';
-import { NamedModulesPlugin, HotModuleReplacementPlugin, NoEmitOnErrorsPlugin } from 'webpack';
+import {
+  NamedModulesPlugin,
+  HotModuleReplacementPlugin,
+  NoEmitOnErrorsPlugin,
+} from 'webpack';
 import webpackMerge from 'webpack-merge';
 import commonConfig from './webpack.common';
 
@@ -28,9 +32,9 @@ const config = webpackMerge.smart(commonConfig, {
   ],
   resolve: {
     alias: {
-      'react-dom': '@hot-loader/react-dom'
-    }
-  }
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
 });
 
 export default config;
