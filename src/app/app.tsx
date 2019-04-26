@@ -1,10 +1,17 @@
+import { css } from '@emotion/core';
 import React from 'react';
-import { hot } from 'react-hot-loader';
+// tslint:disable-next-line
+import { hot } from 'react-hot-loader/root';
 
-import './app.scss';
+const styles = css`
+    color: white;
+    background-color: blue;
+`;
 
 const App = () => {
-  return <div className="title">Hello World!</div>;
+  return (
+    <div css={styles}>Hello World!</div>
+  );
 }
 
-export default hot(module)(App);
+export default hot(App);

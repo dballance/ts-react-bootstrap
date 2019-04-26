@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './main.scss';
+
+// tslint:disable-next-line
+import 'sanitize.css/sanitize.css';
 
 import App from './app/app';
 

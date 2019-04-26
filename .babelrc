@@ -1,0 +1,29 @@
+{
+  "env": {
+    "production": {
+      "presets": [
+        "@babel/env",
+        "@babel/preset-typescript",
+        "@babel/preset-react",
+        "@emotion/babel-preset-css-prop",
+      ],
+      "plugins": [
+        "@babel/proposal-class-properties",
+        "@babel/proposal-object-rest-spread",
+      ],
+    },
+    "development": {
+      "presets": [
+        "@babel/env",
+        "@babel/preset-typescript",
+        "@babel/preset-react",
+        ["@emotion/babel-preset-css-prop", { "sourceMap": true }],
+      ],
+      "plugins": [
+        "@babel/proposal-class-properties",
+        "@babel/proposal-object-rest-spread",
+        "react-hot-loader/babel",
+      ],
+    }
+  }
+}

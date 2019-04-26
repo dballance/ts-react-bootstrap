@@ -5,10 +5,10 @@
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
-    "target": "es5",
+    "esModuleInterop": true,
+    "target": "esnext",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2017", "dom"],
-    "jsx": "react",
-    "allowSyntheticDefaultImports": true
+    "jsx": "react"
   }
 }

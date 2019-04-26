@@ -1,15 +1,9 @@
-import * as CleanWebpackPlugin from 'clean-webpack-plugin';
-import * as ExtractTextPlugin from 'extract-text-webpack-plugin';
-import * as HtmlWebpackPlugin from 'html-webpack-plugin';
-import * as path from 'path';
-import * as webpack from 'webpack';
+import CleanWebpackPlugin from 'clean-webpack-plugin';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import { Configuration } from 'webpack';
 
-const extractSass = new ExtractTextPlugin({
-  filename: 'app.[contenthash].css',
-  disable: process.env.NODE_ENV === 'development',
-});
-
-const config: webpack.Configuration = {
+const config: Configuration = {
   entry: {
     app: './src/main.ts',
     polyfill: './src/polyfills.ts',
@@ -17,23 +11,12 @@ const config: webpack.Configuration = {
   },
   module: {
     rules: [
-      {
-        test: /\.scss$/,
-        use: extractSass.extract({
-          use: [
-            { loader: 'css-loader', options: {} },
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: { path: 'config/postcss.config.js' },
-              },
-            },
-            {
-              loader: 'sass-loader',
-            },
-          ],
-          fallback: 'style-loader',
-        }),
+      {        
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
       {
         enforce: 'pre',
@@ -52,10 +35,7 @@ const config: webpack.Configuration = {
         test: /\.tsx?$/,
         use: [
           {
-            loader: 'ts-loader',
-            options: {
-              configFile: 'tsconfig.json',
-            },
+            loader: 'babel-loader',
           },
         ],
       },
@@ -71,14 +51,11 @@ const config: webpack.Configuration = {
     path: path.resolve(__dirname, '../dist'),
   },
   plugins: [
-    new CleanWebpackPlugin(['dist'], {
-      root: path.resolve(__dirname, '../'),
-    }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       title: 'Dev',
-    }),
-    extractSass,
+    }), 
   ],
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
