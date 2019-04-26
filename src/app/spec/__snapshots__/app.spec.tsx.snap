@@ -2,9 +2,18 @@
 
 exports[`App  should match the snapshot 1`] = `
 <div
-  className="title"
+  css={
+    Object {
+      "map": undefined,
+      "name": "1kompxv",
+      "next": undefined,
+      "styles": "
+  color: white;
+  background-color: blue;
+",
+    }
+  }
 >
-  Hello ! 
-  Foo
+  Hello World!
 </div>
 `;

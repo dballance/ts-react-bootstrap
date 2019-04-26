@@ -5,20 +5,19 @@ import App from '../app';
 
 describe('App ', () => {
   it('should render without throwing', () => {
-    const wrapper = shallow(<App toWhat="Foo" />);
+    const wrapper = shallow(<App />);
 
     expect(wrapper.find('div').length).toBe(1);
-    expect(wrapper.find('div').hasClass('title')).toBe(true);
   });
 
   it('should render text', () => {
-    const wrapper = shallow(<App toWhat="Foo" />);
+    const wrapper = shallow(<App/>);
 
-    expect(wrapper.find('div').text()).toBe('Hello ! Foo');
+    expect(wrapper.find('div').text()).toBe('Hello World!');
   });
 
   it('should match the snapshot', () => {
-    const wrapper = shallow(<App toWhat="Foo" />);
+    const wrapper = shallow(<App/>);
 
     expect(wrapper).toMatchSnapshot();
   });

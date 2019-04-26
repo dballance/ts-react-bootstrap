@@ -73,7 +73,7 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.(tsx?)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.(tsx?)$": "ts-jest"
     },
     "testRegex": "(src/app).*\\.(test|spec)\\.(tsx?)$",
     "moduleFileExtensions": [
@@ -86,7 +86,9 @@
       "node_modules",
       "src"
     ],
-    "setupTestFrameworkScriptFile": "./spec/test.ts",
+    "setupFilesAfterEnv": [
+      "./spec/test.ts"
+    ],
     "setupFiles": [
       "./spec/polyfills/requestAnimationFrame.ts"
     ],
